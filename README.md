@@ -1,4 +1,5 @@
 **SAP S/4HANA Procure-to-Pay (P2P) and AP Process Design**
+
 **Learning project**: end-to-end design of the Procure-to-Pay cycle in SAP S/4HANA, covering Accounts Payable, Materials Management and FI-MM integration.
 
 **Disclaimer**: All data is synthetic. This project is not affiliated with SAP or any employer.
