@@ -1,5 +1,6 @@
 **SAP S/4HANA FI-MM Procure-to-Pay (P2P) Business Scenario**
 
+
 **1. Project Overview**
 This is an independent SAP S/4HANA FI-MM learning project designed to demonstrate my understanding of the end-to-end Procure-to-Pay (P2P) business process.
 
@@ -9,6 +10,7 @@ Materials Management (MM)
 Financial Accounting (FI)
 Accounts Payable (AP)
 The complete project uses synthetic business data created specifically for learning and portfolio purposes.
+
 
 **2. Business Scenario**
 Nova Manufacturing Pvt. Ltd. is a fictional manufacturing company that purchases raw materials from external suppliers for its production activities.
@@ -37,6 +39,7 @@ Storage Location	                SL01
 
 These values are fictional and were created only for this learning project.
 
+
 **4. Synthetic Master Data**
 Supplier
 Field                           	Value
@@ -57,6 +60,7 @@ Net Purchase Value	            ₹50,000
 
 All supplier, material, company and transaction data used in this repository are invented for learning purposes.
 
+
 **5. Business Requirement**
 The production department identifies a requirement for 100 units of RM-1001.
 
@@ -74,6 +78,7 @@ The process should provide visibility into:
 • Payment
 • Clearing
 • GR/IR reconciliation
+
 
 **6. End-to-End Process**
 The project follows this business flow:
@@ -103,6 +108,7 @@ Payment
 Clearing
 ↓
 GR/IR Reconciliation
+
 
 **7. Process Steps**
 _Step 1: Identify Purchase Requirement_
@@ -167,6 +173,7 @@ The receiving team verifies:
 
 If everything is acceptable, the Goods Receipt is recorded.
 
+
 **8. Goods Receipt Accounting Concept**
 For this learning scenario, the simplified accounting concept for a valuated stock-material receipt is:
 
@@ -179,6 +186,7 @@ Dr Inventory ₹50,000
 Cr GR/IR ₹50,000
 
 The exact accounting treatment in a real implementation depends on the configured business scenario and account determination.
+
 
 **9. Supplier Invoice**
 After supplying the material, the supplier submits an invoice.
@@ -193,6 +201,7 @@ Net Amount                ₹50,000
 PO Reference	Synthetic PO reference
 
 The supplier invoice must be checked before normal processing continues.
+
 
 **10. Three-Way Match**
 The project compares three business documents:
@@ -236,6 +245,7 @@ This creates the supplier liability.
 
 Tax will be handled separately in later versions of this project so that this initial scenario remains focused on the core FI-MM process.
 
+
 **12. Supplier Payment**
 The supplier invoice becomes eligible for payment according to the agreed payment terms, provided there are no unresolved payment blocks or exceptions.
 
@@ -245,6 +255,7 @@ Dr Supplier Payable ₹50,000
 Cr Bank ₹50,000
 
 The supplier liability is cleared through the payment process.
+
 
 **13. GR/IR Reconciliation**
 The project also includes review of the GR/IR clearing account.
@@ -259,6 +270,7 @@ Examples of situations that may require investigation include:
 • Unresolved old items
 
 The reconciliation section of this portfolio will document synthetic examples of these situations.
+
 
 **14. Exception Scenarios**
 The project will test both successful and unsuccessful transactions.
@@ -309,6 +321,7 @@ Expected investigation:
 
 Investigate the documents before proceeding to prevent duplicate processing or payment.
 
+
 **15. Project Objectives**
 By completing this project, I aim to demonstrate an understanding of:
 
@@ -328,6 +341,7 @@ By completing this project, I aim to demonstrate an understanding of:
 • Business-process exceptions
 • Functional testing
 
+
 **16. Project Deliverables**
 The repository will gradually include:
 
@@ -343,6 +357,7 @@ The repository will gradually include:
 • Defect log
 • Configuration rationale
 • Lessons learned
+
 
 **17. Repository Structure**
 sap-p2p-process-design/
@@ -367,6 +382,7 @@ sap-p2p-process-design/
 │
 └── 08-lessons-learned/
 
+
 **18. Current Project Status**
 **Deliverable	                           Status **
 	1. Business Scenario	              Complete
@@ -384,13 +400,8 @@ The status will be updated as I complete each part of the project.
 
 
 **19. Learning Disclaimer**
-
 This repository is an independent SAP S/4HANA learning portfolio.
 
 All companies, suppliers, materials, Purchase Orders, invoices, amounts, organizational structures and transaction data used in the project are fictional or synthetic.
 
 The repository does not contain employer, customer, supplier or other confidential business information.
-
-SAP and SAP S/4HANA are trademarks of SAP SE. This project is not affiliated with or endorsed by SAP SE.
-
-
