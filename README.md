@@ -16,6 +16,7 @@ Goods receipt	Inventory / Expense	GR/IR
 Invoice receipt	GR/IR, Input tax	Vendor
 Payment	Vendor	Bank
 Contents
+
 Folder	Description	Status
 01-business-requirements	           Scenario and requirements	         🔄 In progress
 02-process-flows	                   P2P flow diagrams	                 ⏳ Planned
@@ -24,6 +25,30 @@ Folder	Description	Status
 05-synthetic-data                    Invented vendors, POs and invoices  ⏳ Planned
 07-defect-log	                       Issues found and fixed	             ⏳ Planned
 08-lessons-learned	                 Reflections and improvements	       ⏳ Planned
+
+├── 01-business-requirements/
+│   ├── business-scenario.md
+│   └── p2p-glossary.md
+│
+├── 02-process-flows/
+│   └── P2P_Process_Flow_Steps.xlsx
+│
+├── 03-config-rationale/
+│   └── configuration-notes.md
+│
+├── 04-test-cases/
+│   └── p2p-test-cases.xlsx
+│
+├── 05-synthetic-data/
+│   └── sample-transactions.xlsx
+│
+├── 06-scripts/
+│
+├── 07-defect-log/
+│   └── defect-log.xlsx
+│
+└── 08-lessons-learned/
+    └── lessons-learned.md
 
 What I learned
 **To be updated as the project progresses.**
