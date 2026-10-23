@@ -43,20 +43,20 @@ These values are fictional and were created only for this learning project.
 **4. Synthetic Master Data**
 Supplier
 Field                           	Value
-Supplier ID	                    V10001
+Supplier ID	                      V10001
 Supplier Name	                  Alpha Industrial Supplies
-Country	                        India
+Country	                          India
 Currency	                      INR
 Payment Terms	                  30 Days
 
 Material
 Field	                            Value
-Material ID	                    RM-1001
-Description	                    Synthetic Production Material
+Material ID	                      RM-1001
+Description	                      Synthetic Production Material
 Material Type	                  Raw Material
 Quantity Required	              100 Units
-Unit Price	                    ₹500
-Net Purchase Value	            ₹50,000
+Unit Price	                      ₹500
+Net Purchase Value	              ₹50,000
 
 All supplier, material, company and transaction data used in this repository are invented for learning purposes.
 
@@ -152,11 +152,11 @@ Purchasing creates a Purchase Order for the selected supplier.
 Example PO
 Field                        	Value
 Supplier                    V10001 – Alpha Industrial Supplies
-Material	                  RM-1001
+Material	                RM-1001
 Quantity                    100 Units
 Unit Price	                ₹500
-Net Value	                  ₹50,000
-Plant	                      PL01
+Net Value	                ₹50,000
+Plant	                    PL01
 The Purchase Order communicates the purchasing requirement to the supplier.
 
 _Step 5: Receive Material_
@@ -197,8 +197,8 @@ Field	                    Value
 Supplier                	V10001
 Material                	RM-1001
 Quantity                	100 Units
-Net Amount                ₹50,000
-PO Reference	Synthetic PO reference
+Net Amount                  ₹50,000
+PO Reference Synthetic PO reference
 
 The supplier invoice must be checked before normal processing continues.
 
@@ -225,7 +225,7 @@ Invoice Unit Price = ₹500
 
 Result: Match
 
-Because the example quantities and prices correspond, this scenario represents a successful match.
+Based on the synthetic data used in this scenario, the Purchase Order quantity and price, Goods Receipt quantity, and supplier invoice quantity and price are consistent. The invoice therefore represents a successful three-way-match example, subject to the applicable SAP tolerance and invoice-verification settings.
 
 In an actual SAP implementation, applicable tolerances and controls depend on system configuration.
 
@@ -303,16 +303,13 @@ Expected investigation:
 
 Review the Purchase Order price and supplier invoice and resolve the difference according to the applicable business rules and configured tolerances.
 
-**Scenario D** - Missing Goods Receipt
-PO exists.
+**Scenario D** - Invoice Received Before Goods Receipt	.
 
-Invoice is received.
-
-Goods Receipt has not yet been recorded.
+A Purchase Order exists and the supplier invoice has been received, but the expected Goods Receipt has not yet been recorded.
 
 Expected investigation:
 
-Confirm whether the material was actually received and whether the Goods Receipt needs to be recorded.
+Verify whether the material has actually been received, review the PO and invoice-verification controls, and determine whether the missing Goods Receipt is caused by a timing difference, process delay, or receiving issue.
 
 **Scenario E**- Potential Duplicate Invoice
 Two invoices contain the same supplier, invoice reference and amount.
