@@ -60,7 +60,7 @@ It can contain information such as:
 
 After the purchase requirement is approved, a Purchase Order is created with the following synthetic data:
 
-    **Field#          Value**
+    Field             Value
     Supplier	      V10001 - Alpha Industrial Supplies
     Material          RM-1001
     Quantity          100 Units
@@ -117,7 +117,7 @@ For PO-based procurement, the supplier invoice can be checked against the purcha
 **Business Example**
 Supplier Invoice:
 
-    Field 	         Value
+    Field 	             Value
     Supplier	         V10001
     Quantity	         100 Units
     Unit Price           ₹500
