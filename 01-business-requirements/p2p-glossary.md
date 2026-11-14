@@ -40,7 +40,7 @@ Key Learning
 A Purchase Requisition represents the internal requirement to purchase.
 It is not the supplier invoice and it is not the payment.
 
-# 2. Purchase Order (PO)# 
+# 2. Purchase Order (PO)
 
   # Definition
 A Purchase Order is a purchasing document used to communicate the procurement requirement to a supplier.
@@ -56,7 +56,7 @@ It can contain information such as:
 	• Purchasing organization
 	• Payment terms
   
-# Business Example# 
+# Business Example
 
 After the purchase requirement is approved, a Purchase Order is created with the following synthetic data:
 
@@ -83,7 +83,7 @@ Goods Receipt records that material ordered from the supplier has been received.
 
 For a PO-based procurement process, the Goods Receipt is normally recorded with reference to the relevant Purchase Order.
 
-# Important Checks# 
+# Important Checks
 
 At Goods Receipt, the business can check:
 
@@ -92,7 +92,7 @@ At Goods Receipt, the business can check:
 	• Whether there is an over-delivery or under-delivery
 	• Whether the receipt refers to the correct Purchase Order
   
-# Business Example# 
+# Business Example
 
 Purchase Order: 100 units
 Actual material received: 100 units
@@ -117,7 +117,7 @@ For PO-based procurement, the supplier invoice can be checked against the purcha
 **Business Example**
 Supplier Invoice:
 
-    # Field 	         Value
+    Field 	         Value
     Supplier	         V10001
     Quantity	         100 Units
     Unit Price           ₹500
@@ -154,11 +154,11 @@ When the matching supplier invoice is recorded:
     Dr GR/IR              ₹50,000
         Cr Supplier       ₹50,000
         
-# Matching Situation# 
+**Matching Situation**
 
 If the Goods Receipt and Invoice Receipt # Value# s correspond, the relevant GR/IR items can be cleared.
 
-# Exception Situation# 
+# Exception Situation
 
 Open GR/IR items may require investigation when:
 
@@ -194,7 +194,7 @@ Result:
 
 The example represents a successful match.
 
-# Quantity Exception Example# 
+# Quantity Exception Example
 
     Document                 Quantity
     Purchase Order	         100
@@ -215,7 +215,7 @@ The price difference should be investigated according to the applicable business
 **Key Learning** 
 Three-Way Match is an important control in the P2P and Accounts Payable process because it helps identify discrepancies before normal invoice and payment processing continues.
 
-# 7. Supplier / Business Partner# 
+# 7. Supplier / Business Partner
 
   # Definition
 A supplier is the external business party from whom an organization purchases materials or services.
@@ -245,7 +245,7 @@ Correct supplier master information is important because errors in master data c
 
 # 8. Payment Terms# 
 
-# Definitio# 
+# Definition
 Payment Terms define agreed conditions relating to when an invoice becomes due for payment.
 Payment terms can also support cash-discount conditions depending on the agreed arrangement and SAP configuration.
 
@@ -319,7 +319,7 @@ The Company Code is important for financial reporting and accounting transaction
 
 # Synthetic Project Example# 
 
-      # Field                Value
+      Field                Value
       Company                Nova Manufacturing Pvt. Ltd.
       Company Code           NM01
 
@@ -359,14 +359,14 @@ The process demonstrates how Materials Management and Financial Accounting work 
 
 The same fictional scenario is used throughout my project to maintain consistency.
 
-    # Field 	                                        Synthetic Value
+    Field 	                                            Synthetic Value
     Company	                                     Nova Manufacturing Pvt. Ltd.
     Company Code	                                         NM01
     Plant	                                                 PL01
     Supplier	                                  V10001 - Alpha Industrial Supplies
     Material	                                            RM-1001
     Quantity	                                           100 Units
-    Unit Price	                                            ₹500
+    Unit Price	                                             ₹500
     Net Purchase Value                                     ₹50,000
 
 # What I Learned# 
