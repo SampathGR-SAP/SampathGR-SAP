@@ -7,6 +7,7 @@ This document explains the end-to-end Procure-to-Pay (P2P) process used in my in
 The project demonstrates how a business requirement progresses through purchasing, goods receipt, supplier invoice verification, Accounts Payable, payment, and GR/IR reconciliation.
 
 The main learning objective is to understand the integration between:
+
 	• Materials Management (MM)
 	• Financial Accounting (FI)
 	• Accounts Payable (AP)
@@ -15,6 +16,7 @@ All company, supplier, material, organizational, and transaction data used in th
 
 
 ***1. End-to-End P2P Flow***
+
 The complete process used in this learning scenario is:
 
 Business Requirement
@@ -65,8 +67,8 @@ Supplier	                      V10001 - Alpha Industrial Supplies
 Material	                               RM-1001
 Description	                    Synthetic Production Material
 Quantity	                              100 Units
-Unit Price	                             ₹500
-Net Purchase Value	                   ₹50,000
+Unit Price	                              ₹500
+Net Purchase Value	                     ₹50,000
 
 
 ***3. Business Requirement***
@@ -90,8 +92,8 @@ A Purchase Requisition is created to document the internal requirement for the m
 
 # Example
 # Field	                                           Value
-Material	                                        RM-1001
-Quantity	                                        100 Units
+Material	                                     RM-1001
+Quantity	                                     100 Units
 Plant                                             PL01
 Expected Value	                                  50,000
 
@@ -130,11 +132,11 @@ If rejected, the requirement needs to be reviewed or corrected.
 Purchasing creates a Purchase Order for the selected supplier.
 
 # Synthetic                           Purchase Order
-Field	Value
+Field	                               Value
 Supplier	                          V10001 - Alpha Industrial Supplies
 Material	                            RM-1001
 Quantity	                           100 Units
-Unit Price	                         ₹500
+Unit Price	                           ₹500
 Net PO Value	                       ₹50,000
 Plant	                               PL01
 
@@ -150,6 +152,7 @@ However, important information such as account assignments, prices, and purchasi
 ***7. PO Approval / Release***
 
 Depending on the configured business process, the Purchase Order may require approval before being sent to the supplier.
+
              PO Review
                  |
           +------+------+
@@ -167,11 +170,12 @@ Once approved, the supplier can fulfil the order.
 The supplier delivers the material.
 
 The receiving team verifies information such as:
+
 		○ Correct material
 		○ Correct quantity
 		○ Purchase Order reference
 		○ Delivery information
-    ○ Over-delivery or under-delivery
+        ○ Over-delivery or under-delivery
     
 **Synthetic Example**
  
@@ -190,7 +194,7 @@ Dr Inventory          ₹50,000
     
 # Result
 
-  • Material receipt is recorded.
+    • Material receipt is recorded.
 	• Inventory is updated.
 	• A financial document is generated.
 	• GR/IR is credited for the value of the receipt.
@@ -223,7 +227,7 @@ The supplier invoice is checked against the available purchasing and receipt inf
 
 Important checks can include:
 
-  ► Supplier
+    ► Supplier
 	► Purchase Order
 	► Material
 	► Quantity
@@ -286,6 +290,7 @@ Dr GR/IR              ₹50,000
     Cr Supplier       ₹50,000
     
 **Result**
+
 	Ø GR/IR is debited.
 	Ø Supplier liability is created.
 	Ø An FI accounting document is generated.
@@ -301,6 +306,7 @@ After invoice posting, the supplier liability remains open until it is cleared t
  Supplier Liability = ₹50,000
 
 Payment eligibility can depend on:
+
     • Payment terms
 	• Due date
 	• Payment block
@@ -332,6 +338,7 @@ The objective is to ensure that the supplier invoice and corresponding payment a
 GR/IR reconciliation is used to review open items and investigate differences between Goods Receipts and Invoice Receipts.
 
 Examples requiring investigation include:
+
      Goods Receipt exists but invoice is missing
 	 Invoice exists but corresponding Goods Receipt is missing
 	 Quantity difference
@@ -340,6 +347,7 @@ Examples requiring investigation include:
 	 Old unresolved GR/IR item
 
  **Simplified GR/IR Relationship**
+ 	
 Goods Receipt
 Dr Inventory
     Cr GR/IR
@@ -362,6 +370,7 @@ Open differences require investigation and appropriate resolution.
 ***17. Exception Flow***
 
 Not every invoice will follow the successful path. 
+
              Invoice Verification
                      |
                      ↓
@@ -384,8 +393,9 @@ Not every invoice will follow the successful path.
                     Revalidate
 
 # Potential exceptions include:	
-  • Missing Goods Receipt
-  • Quantity variance
+
+    • Missing Goods Receipt
+    • Quantity variance
 	• Price variance
 	• Potential duplicate invoice
 	• Incorrect purchasing information
@@ -400,45 +410,43 @@ These exceptions will be demonstrated separately later in the portfolio using sy
 
 **Purchase Requisition**
 ## Main Business Area: MM / Purchasing
+
 FI Impact: No FI posting in this learning scenario.
 
-Purchase Order
+# Purchase Order
 Main Business Area: MM / Purchasing
 FI Impact: No FI posting in this learning scenario.
 
-Goods Receipt
+# Goods Receipt
 Main Business Area: MM / Inventory
-
 Simplified FI Impact:
 
 Dr Inventory
 Cr GR/IR
 
-Invoice Receipt
+# Invoice Receipt
 Main Business Area: MM Invoice Verification + FI/AP
-
 Simplified FI Impact:
 
 Dr GR/IR
 Cr Supplier
 
-Supplier Open Item
+# Supplier Open Item
 Main Business Area: FI/AP
 FI Impact: Supplier liability remains outstanding until payment/clearing.
 
-Payment
+# Payment
 Main Business Area: FI/AP
-
 Simplified FI Impact:
 
 Dr Supplier
 Cr Bank
 
-Clearing
+# Clearing
 Main Business Area: FI/AP
 FI Impact: The relevant supplier open item is cleared.
 
-GR/IR Reconciliation
+# GR/IR Reconciliation
 Main Business Area: MM + FI
 Purpose: Review and resolve differences between Goods Receipt and Invoice Receipt.
 
