@@ -1,4 +1,4 @@
-**Hi, I'm Sampath G R 👋**
+# Hi, I'm Sampath G R 👋
 
 Account Payable Analyst | Invoice Processing | SAP S/4HANA FI & MM Learner | Procure-to-Pay (P2P)
 
@@ -6,12 +6,13 @@ I am an Accounts Payable professional currently building hands-on knowledge in *
 
 My current learning portfolio focuses on understanding how procurement, invoice processing, accounting, and vendor payments integrate within SAP S/4HANA.
 
-**🎯 Career Focus**
+## 🎯 Career Focus
 My goal is to develop practical SAP S/4HANA FI/MM skills and transition toward an **SAP FI/FICO or FI-MM functional consulting career**.
 
 I am building this GitHub portfolio to document my learning through business scenarios, process documentation, accounting examples, and SAP FI-MM integration concepts.
 
-**💼 Functional Areas**
+## 💼 Functional Areas
+
 	Ø Accounts Payable (AP)
 	Ø Procure-to-Pay (P2P)
 	Ø SAP S/4HANA Finance (FI)
@@ -26,62 +27,67 @@ I am building this GitHub portfolio to document my learning through business sce
 	Ø Blocked Invoice concepts
 	Ø Vendor Payments and Clearing
 
-**🔄 P2P Process I'm Learning**
+## 🔄 P2P Process I'm Learning
 
-Purchase Requisition (PR)
-↓
-Purchase Order (PO)
-↓
-Goods Receipt (GR)
-↓
-Supplier Invoice / Invoice Receipt (IR)
-↓
-Three-Way Match
-↓
-Invoice Posting
-↓
-Vendor Payment
-↓
-Clearing
+    Purchase Requisition (PR)
+            ↓
+    Purchase Order (PO)
+            ↓
+    Goods Receipt (GR)
+            ↓
+    Supplier Invoice / Invoice Receipt (IR)
+            ↓
+    Three-Way Match
+            ↓
+    Invoice Posting
+            ↓
+    Vendor Payment
+            ↓
+    Clearing
 
 This helps me understand the end-to-end relationship between procurement activities in SAP MM and financial accounting in SAP FI.
 
-**📂 SAP S/4HANA Learning Portfolio**
+## 📂 SAP S/4HANA Learning Portfolio
 My portfolio is being developed step by step around practical Procure-to-Pay business scenarios.
 
 01. Business Requirements
-	• P2P Business Scenario
-	• P2P Glossary
-	• Business Requirements
+   
+    	• P2P Business Scenario
+	    • P2P Glossary
+	    • Business Requirements
 	
-02. P2P Process Flow
-	• Purchase Requisition
-	• Purchase Order
-	• Goods Receipt
-	• Invoice Receipt
-	• Payment and Clearing
+2. P2P Process Flow
+   
+	    • Purchase Requisition
+	    • Purchase Order
+	    • Goods Receipt
+	    • Invoice Receipt
+	    • Payment and Clearing
 	
-03. Master Data
-	• Supplier / Business Partner concepts
-	• Material Master concepts
-	• Payment Terms
-	• Company Code concepts
+3. Master Data
+   
+	    • Supplier / Business Partner concepts
+	    • Material Master concepts
+	    • Payment Terms
+	    • Company Code concepts
 	
-04. Invoice Processing
-	• PO-based Invoice Processing
-	• Three-Way Matching
-	• Invoice Verification
-	• Blocked Invoice concepts
+4. Invoice Processing
+   
+    	• PO-based Invoice Processing
+    	• Three-Way Matching
+	    • Invoice Verification
+	    • Blocked Invoice concepts
 	
-05. FI-MM Integration
-	• GR/IR concepts
-	• Accounting impact of Goods Receipt
-	• Accounting impact of Invoice Receipt
-	• Vendor Liability
-	• Payment and Clearing
+5. FI-MM Integration
+   
+		• GR/IR concepts
+		• Accounting impact of Goods Receipt
+		• Accounting impact of Invoice Receipt
+		• Vendor Liability
+		• Payment and Clearing
 
 
-**🧾 Example FI-MM Accounting Flow**
+## 🧾 Example FI-MM Accounting Flow
 Goods Receipt
 Dr. Inventory / Expense
 Cr. GR/IR Clearing
@@ -96,25 +102,25 @@ Cr. Bank
 
 These examples are simplified learning scenarios used to understand the accounting impact of the Procure-to-Pay process.
 
-**📚 Currently Learning**
-• SAP S/4HANA FI fundamentals
-• SAP S/4HANA MM fundamentals
-• Accounts Payable in SAP
-• Procure-to-Pay lifecycle
-• FI-MM integration
-• GR/IR accounting
-• Invoice verification
-• Vendor payment and clearing
-• Business process documentation
+## 📚 Currently Learning
+	• SAP S/4HANA FI fundamentals
+	• SAP S/4HANA MM fundamentals
+	• Accounts Payable in SAP
+	• Procure-to-Pay lifecycle
+	• FI-MM integration
+	• GR/IR accounting
+	• Invoice verification
+	• Vendor payment and clearing
+	• Business process documentation
 
-**🚀 Portfolio Goal**
+## 🚀 Portfolio Goal
 The objective of this portfolio is to demonstrate my understanding of:
 
 Business Requirement → SAP Process → Transaction → Accounting Impact → FI-MM Integration
 
 I will continue adding structured business scenarios and practical learning examples as I develop my SAP S/4HANA skills.
 
-**🔐 Disclaimer**
+## 🔐 Disclaimer
 All business scenarios, company names, supplier information, invoice numbers, purchase orders, financial values, and other data used in this portfolio are synthetic and created solely for learning purposes.
 
 This portfolio does not contain confidential information from any current or previous employer.
