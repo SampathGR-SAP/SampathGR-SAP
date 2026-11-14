@@ -15,7 +15,7 @@ The main learning objective is to understand the integration between:
 All company, supplier, material, organizational, and transaction data used in this project is fictional or synthetic.
 
 
-***1. End-to-End P2P Flow***
+ # 1. End-to-End P2P Flow 
 
 The complete process used in this learning scenario is:
 
@@ -50,28 +50,28 @@ GR/IR Reconciliation
 The purchasing activities primarily involve Materials Management, while invoice accounting, supplier liability, payment, and clearing connect the process with Financial Accounting and Accounts Payable.
 
 
-***2. Synthetic Business Scenario***
+# 2. Synthetic Business Scenario 
 
 Nova Manufacturing Pvt. Ltd. is a fictional manufacturing company.
 
 The production department requires 100 units of raw material for production.
 
-# Project Data
-# Field	                              # Synthetic Value
+** Project Data
+** Field	                              ** Synthetic Value
 Company	                          Nova Manufacturing Pvt. Ltd.
 Company Code	                            NM01
 Plant	                                    PL01
-Purchasing Organization	                  NP01
+Purchasing Organization	                   NP01
 Purchasing Group	                        PG01
 Supplier	                      V10001 - Alpha Industrial Supplies
 Material	                               RM-1001
 Description	                    Synthetic Production Material
-Quantity	                              100 Units
-Unit Price	                              ₹500
-Net Purchase Value	                     ₹50,000
+Quantity	                               100 Units
+Unit Price	                               ₹500
+Net Purchase Value	                      ₹50,000
 
 
-***3. Business Requirement***
+# 3. Business Requirement 
 
 The production department identifies the need for 100 units of RM-1001.
 
@@ -81,17 +81,17 @@ Expected Value    = ₹50,000
 
 At this stage, the business has identified the requirement but has not yet purchased or received the material.
 
-# Output
+**Output**
 
 A purchasing requirement exists and can proceed to the Purchase Requisition process.
 
 
-***4. Purchase Requisition (PR)***
+# 4. Purchase Requisition (PR) 
 
 A Purchase Requisition is created to document the internal requirement for the material.
 
-# Example
-# Field	                                           Value
+** Example
+** Field	                                           Value
 Material	                                     RM-1001
 Quantity	                                     100 Units
 Plant                                             PL01
@@ -106,7 +106,7 @@ For this standard learning scenario, creation of the Purchase Requisition does n
 The Purchase Requisition proceeds through the applicable approval process.
 
 
-***5. Purchase Requisition Approval***
+# 5. Purchase Requisition Approval 
 
 The Purchase Requisition is reviewed according to the organization's applicable approval process.
 
@@ -127,11 +127,11 @@ If approved, Purchasing can continue with procurement.
 If rejected, the requirement needs to be reviewed or corrected.
 
 
-***6. Purchase Order (PO)***
+# 6. Purchase Order (PO) 
 
 Purchasing creates a Purchase Order for the selected supplier.
 
-# Synthetic                           Purchase Order
+**Synthetic                           Purchase Order**
 Field	                               Value
 Supplier	                          V10001 - Alpha Industrial Supplies
 Material	                            RM-1001
@@ -149,7 +149,7 @@ In this standard procurement scenario, creation of the Purchase Order does not i
 However, important information such as account assignments, prices, and purchasing conditions is established for subsequent processing.
 
 
-***7. PO Approval / Release***
+# 7. PO Approval / Release 
 
 Depending on the configured business process, the Purchase Order may require approval before being sent to the supplier.
 
@@ -165,7 +165,7 @@ Depending on the configured business process, the Purchase Order may require app
 Once approved, the supplier can fulfil the order.
 
 
-***8. Goods Receipt (GR)***
+# 8. Goods Receipt (GR) 
 
 The supplier delivers the material.
 
@@ -192,7 +192,7 @@ For the valuated stock-material scenario used in this project:
 Dr Inventory          ₹50,000
     Cr GR/IR          ₹50,000
     
-# Result
+** Result
 
     • Material receipt is recorded.
 	• Inventory is updated.
@@ -203,11 +203,11 @@ Dr Inventory          ₹50,000
 The actual accounting treatment depends on the business scenario and SAP configuration.
 
 
-***9. Supplier Invoice Receipt***
+# 9. Supplier Invoice Receipt 
 
 After supplying the material, the supplier submits the invoice.
 
-# Synthetic Invoice
+** Synthetic Invoice
 Field	                      Value
 Supplier	                 V10001
 Material	                 RM-1001
@@ -221,7 +221,7 @@ Tax is intentionally excluded from this first learning scenario.
 The invoice now proceeds to invoice verification.
 
 
-***10. Invoice Verification***
+# 10. Invoice Verification 
 
 The supplier invoice is checked against the available purchasing and receipt information.
 
@@ -241,11 +241,10 @@ Important checks can include:
 The objective is to determine whether the invoice can continue through normal processing or requires investigation.
 
 
-***11. Three-Way Match***
+# 11. Three-Way Match 
 
 Three-Way Match compares information associated with:
 
- 
 Purchase Order
       +
 Goods Receipt
@@ -271,17 +270,17 @@ For this synthetic example, the quantities and relevant prices correspond.
        Match          Variance
           |             |
           ↓             ↓
-   Continue with     Investigate
-   Processing        Exception
+    Continue with     Investigate
+     Processing        Exception
 
 Whether a difference causes an invoice block depends on the applicable SAP configuration, tolerances, and business rules.
 
 
-***12. Invoice Posting***
+# 12. Invoice Posting 
 
 Once the invoice satisfies the applicable validation requirements, it can proceed to posting.
 
-# Simplified Accounting Entry
+** Simplified Accounting Entry
 
 For this initial no-tax example:
 
@@ -299,7 +298,7 @@ Dr GR/IR              ₹50,000
 If the Goods Receipt and Invoice Receipt values correspond, the relevant GR/IR items can clear.
 
 
-***13. Supplier Open Item***
+# 13. Supplier Open Item 
 
 After invoice posting, the supplier liability remains open until it is cleared through the applicable payment process.
 
@@ -314,11 +313,11 @@ Payment eligibility can depend on:
     • Valid supplier payment information
 
 
-***14. Payment***
+# 14. Payment 
 
 On becoming eligible for payment, the supplier liability can be paid according to the applicable payment process.
 
-# Simplified Accounting Entry
+**Simplified Accounting Entry**
  
 Dr Supplier           ₹50,000
     Cr Bank           ₹50,000
@@ -326,14 +325,14 @@ Dr Supplier           ₹50,000
 This example is intentionally simplified. Actual bank and payment accounting can involve additional clearing steps depending on system configuration and the organization's payment process.
 
 
-***15. Clearing***
+# 15. Clearing 
 
 After payment processing, the corresponding supplier open item can be cleared.
 
 The objective is to ensure that the supplier invoice and corresponding payment are correctly reflected in Accounts Payable.
 
 
-***16. GR/IR Reconciliation***
+# 16. GR/IR Reconciliation 
 
 GR/IR reconciliation is used to review open items and investigate differences between Goods Receipts and Invoice Receipts.
 
@@ -348,26 +347,22 @@ Examples requiring investigation include:
 
  **Simplified GR/IR Relationship**
  	
-Goods Receipt
-Dr Inventory
-    Cr GR/IR
-
-        ↓
-
-Invoice Receipt
-Dr GR/IR
-    Cr Supplier
-
-        ↓
-
-Matching values
-        ↓
-GR/IR items clear
+          Goods Receipt
+        Dr Inventory
+           Cr GR/IR
+               ↓
+        Invoice Receipt
+         Dr GR/IR
+          Cr Supplier
+               ↓
+        Matching values
+               ↓
+      GR/IR items clear
 
 Open differences require investigation and appropriate resolution.
 
 
-***17. Exception Flow***
+# 17. Exception Flow 
 
 Not every invoice will follow the successful path. 
 
@@ -392,7 +387,7 @@ Not every invoice will follow the successful path.
                         ↓
                     Revalidate
 
-# Potential exceptions include:	
+**Potential exceptions include:**
 
     • Missing Goods Receipt
     • Quantity variance
@@ -405,62 +400,62 @@ Not every invoice will follow the successful path.
 These exceptions will be demonstrated separately later in the portfolio using synthetic scenarios.
 
 
-***18. FI-MM Integration Points***
+# 18. FI-MM Integration Points 
 
 
 **Purchase Requisition**
-## Main Business Area: MM / Purchasing
+ * Main Business Area: MM / Purchasing
 
 FI Impact: No FI posting in this learning scenario.
 
-# Purchase Order
+** Purchase Order
 Main Business Area: MM / Purchasing
 FI Impact: No FI posting in this learning scenario.
 
-# Goods Receipt
+** Goods Receipt
 Main Business Area: MM / Inventory
 Simplified FI Impact:
 
-Dr Inventory
+ Dr Inventory
 Cr GR/IR
 
-# Invoice Receipt
+** Invoice Receipt
 Main Business Area: MM Invoice Verification + FI/AP
 Simplified FI Impact:
 
 Dr GR/IR
 Cr Supplier
 
-# Supplier Open Item
+** Supplier Open Item
 Main Business Area: FI/AP
 FI Impact: Supplier liability remains outstanding until payment/clearing.
 
-# Payment
+** Payment
 Main Business Area: FI/AP
 Simplified FI Impact:
 
 Dr Supplier
 Cr Bank
 
-# Clearing
+** Clearing
 Main Business Area: FI/AP
 FI Impact: The relevant supplier open item is cleared.
 
-# GR/IR Reconciliation
+** GR/IR Reconciliation
 Main Business Area: MM + FI
 Purpose: Review and resolve differences between Goods Receipt and Invoice Receipt.
 
 
-***19. Key Control Points***
+ 19. Key Control Points 
 
 Important controls in this process include:
  
-# Purchase Controls
+  # Purchase Controls
 	• Appropriate Purchase Requisition
 	• Supplier selection
 	• Purchase Order approval
 	
-# Receiving Controls
+#  Receiving Controls
 	• Correct material
     • Correct quantity
 	• Valid Purchase Order reference
@@ -484,7 +479,7 @@ Important controls in this process include:
 	 
 
 
-***20. What I Learned***
+ 20. What I Learned 
 
 Through this process-flow exercise, I developed a clearer understanding of:
 	1. How a business requirement becomes a Purchase Requisition
@@ -500,7 +495,7 @@ Through this process-flow exercise, I developed a clearer understanding of:
 	11. Why GR/IR reconciliation is important for FI-MM integration
 
 
-***21. Next Project Steps***
+ 21. Next Project Steps 
 
 The next sections of this portfolio will cover:
 
@@ -513,7 +508,7 @@ The next sections of this portfolio will cover:
 	Ø Lessons learned
 
 
-## Project Disclaimer
+ * Project Disclaimer
 
 This is an independent SAP S/4HANA FI-MM learning and portfolio project.
 
