@@ -1,6 +1,6 @@
 # SAP S/4HANA FI-MM Procure-to-Pay (P2P) Process Flow
 
-**Project Overview**
+## Project Overview
 
 This document explains the end-to-end Procure-to-Pay (P2P) process used in my independent SAP S/4HANA FI-MM learning project.
 
@@ -19,33 +19,33 @@ All company, supplier, material, organizational, and transaction data used in th
 
 The complete process used in this learning scenario is:
 
-Business Requirement
-        ↓
-Purchase Requisition (PR)
-        ↓
-PR Approval
-        ↓
-Purchase Order (PO)
-        ↓
-PO Approval / Release
-        ↓
-Goods Receipt (GR)
-        ↓
-Supplier Invoice Receipt
-        ↓
-Invoice Verification
-        ↓
-Three-Way Match
-        ↓
-Invoice Posting
-        ↓
-Supplier Open Item
-        ↓
-Payment
-        ↓
-Clearing
-        ↓
-GR/IR Reconciliation
+    Business Requirement
+            ↓
+    Purchase Requisition (PR)
+            ↓
+    PR Approval
+            ↓
+    Purchase Order (PO)
+            ↓
+    PO Approval / Release
+            ↓
+    Goods Receipt (GR)
+            ↓
+    Supplier Invoice Receipt
+            ↓
+    Invoice Verification
+            ↓
+    Three-Way Match
+            ↓
+    Invoice Posting
+            ↓
+    Supplier Open Item
+            ↓
+    Payment
+            ↓
+    Clearing
+            ↓
+    GR/IR Reconciliation
 
 The purchasing activities primarily involve Materials Management, while invoice accounting, supplier liability, payment, and clearing connect the process with Financial Accounting and Accounts Payable.
 
@@ -56,19 +56,20 @@ Nova Manufacturing Pvt. Ltd. is a fictional manufacturing company.
 
 The production department requires 100 units of raw material for production.
 
-** Project Data
-** Field	                              ** Synthetic Value
-Company	                          Nova Manufacturing Pvt. Ltd.
-Company Code	                            NM01
-Plant	                                    PL01
-Purchasing Organization	                   NP01
-Purchasing Group	                        PG01
-Supplier	                      V10001 - Alpha Industrial Supplies
-Material	                               RM-1001
-Description	                    Synthetic Production Material
-Quantity	                               100 Units
-Unit Price	                               ₹500
-Net Purchase Value	                      ₹50,000
+**Project Data**
+
+    Field	                              Synthetic Value
+    Company	                          Nova Manufacturing Pvt. Ltd.
+    Company Code	                            NM01
+    Plant	                                    PL01
+    Purchasing Organization	                    NP01
+    Purchasing Group	                        PG01
+    Supplier	                      V10001 - Alpha Industrial Supplies
+    Material	                               RM-1001
+    Description	                    Synthetic Production Material
+    Quantity	                               100 Units
+    Unit Price	                               ₹500
+    Net Purchase Value	                      ₹50,000
 
 
 # 3. Business Requirement 
@@ -90,12 +91,13 @@ A purchasing requirement exists and can proceed to the Purchase Requisition proc
 
 A Purchase Requisition is created to document the internal requirement for the material.
 
-** Example
-** Field	                                           Value
-Material	                                     RM-1001
-Quantity	                                     100 Units
-Plant                                             PL01
-Expected Value	                                  50,000
+**Example**
+
+    Field	                                           Value
+    Material	                                     RM-1001
+    Quantity	                                     100 Units
+    Plant                                             PL01
+    Expected Value	                                  50,000
 
 **Accounting Impact**
 
@@ -132,13 +134,14 @@ If rejected, the requirement needs to be reviewed or corrected.
 Purchasing creates a Purchase Order for the selected supplier.
 
 **Synthetic                           Purchase Order**
-Field	                               Value
-Supplier	                          V10001 - Alpha Industrial Supplies
-Material	                            RM-1001
-Quantity	                           100 Units
-Unit Price	                           ₹500
-Net PO Value	                       ₹50,000
-Plant	                               PL01
+
+    Field	                               Value
+    Supplier	                          V10001 - Alpha Industrial Supplies
+    Material	                           RM-1001
+    Quantity	                           100 Units
+    Unit Price	                           ₹500
+    Net PO Value	                       ₹50,000
+    Plant	                               PL01
 
 The Purchase Order communicates the purchasing requirement to the supplier.
 
@@ -187,10 +190,9 @@ The Goods Receipt is recorded with reference to the Purchase Order.
 **Simplified Accounting Entry**
 
 For the valuated stock-material scenario used in this project:
-
  
-Dr Inventory          ₹50,000
-    Cr GR/IR          ₹50,000
+    Dr Inventory          ₹50,000
+        Cr GR/IR          ₹50,000
     
 ** Result
 
@@ -207,14 +209,15 @@ The actual accounting treatment depends on the business scenario and SAP configu
 
 After supplying the material, the supplier submits the invoice.
 
-** Synthetic Invoice
-Field	                      Value
-Supplier	                 V10001
-Material	                 RM-1001
-Quantity	                 100 Units
-Unit Price	               ₹500
-Net Invoice Amount         ₹50,000
-PO Reference	         Synthetic PO Reference
+**Synthetic Invoice**
+    
+	Field	                     Value
+    Supplier	                 V10001
+    Material	                 RM-1001
+    Quantity	                 100 Units
+    Unit Price	                  ₹500
+    Net Invoice Amount            ₹50,000
+    PO Reference	           Synthetic PO Reference
 
 Tax is intentionally excluded from this first learning scenario.
 
@@ -245,19 +248,19 @@ The objective is to determine whether the invoice can continue through normal pr
 
 Three-Way Match compares information associated with:
 
-Purchase Order
-      +
-Goods Receipt
-      +
-Supplier Invoice
-      ↓
-Three-Way Match
+    Purchase Order
+          +
+    Goods Receipt
+          +
+    Supplier Invoice
+          ↓
+    Three-Way Match
 
 **Successful Scenario**
 
-Check         PO	     GR	     Invoice	     Result
-Quantity  	 100	     100	     100	       Match
-Unit Price 	 ₹500	     N/A	     ₹500	       Match
+    Check         PO	     GR	       Invoice	      Result
+    Quantity  	 100	     100	     100	       Match
+    Unit Price 	 ₹500	     N/A	     ₹500	       Match
 
 For this synthetic example, the quantities and relevant prices correspond.
 
@@ -280,13 +283,13 @@ Whether a difference causes an invoice block depends on the applicable SAP confi
 
 Once the invoice satisfies the applicable validation requirements, it can proceed to posting.
 
-** Simplified Accounting Entry
+**Simplified Accounting Entry**
 
 For this initial no-tax example:
 
  
-Dr GR/IR              ₹50,000
-    Cr Supplier       ₹50,000
+    Dr GR/IR              ₹50,000
+        Cr Supplier       ₹50,000
     
 **Result**
 
@@ -319,8 +322,8 @@ On becoming eligible for payment, the supplier liability can be paid according t
 
 **Simplified Accounting Entry**
  
-Dr Supplier           ₹50,000
-    Cr Bank           ₹50,000
+    Dr Supplier           ₹50,000
+        Cr Bank           ₹50,000
 
 This example is intentionally simplified. Actual bank and payment accounting can involve additional clearing steps depending on system configuration and the organization's payment process.
 
@@ -402,48 +405,15 @@ These exceptions will be demonstrated separately later in the portfolio using sy
 
 # 18. FI-MM Integration Points 
 
-
-**Purchase Requisition**
- * Main Business Area: MM / Purchasing
-
-FI Impact: No FI posting in this learning scenario.
-
-** Purchase Order
-Main Business Area: MM / Purchasing
-FI Impact: No FI posting in this learning scenario.
-
-** Goods Receipt
-Main Business Area: MM / Inventory
-Simplified FI Impact:
-
- Dr Inventory
-Cr GR/IR
-
-** Invoice Receipt
-Main Business Area: MM Invoice Verification + FI/AP
-Simplified FI Impact:
-
-Dr GR/IR
-Cr Supplier
-
-** Supplier Open Item
-Main Business Area: FI/AP
-FI Impact: Supplier liability remains outstanding until payment/clearing.
-
-** Payment
-Main Business Area: FI/AP
-Simplified FI Impact:
-
-Dr Supplier
-Cr Bank
-
-** Clearing
-Main Business Area: FI/AP
-FI Impact: The relevant supplier open item is cleared.
-
-** GR/IR Reconciliation
-Main Business Area: MM + FI
-Purpose: Review and resolve differences between Goods Receipt and Invoice Receipt.
+    Process	                 Main Business Area                    Simplified FI Impact
+    Purchase Requisition     MM / Purchasing                       No FI posting in this scenario
+    Purchase Order	         MM / Purchasing                       No FI posting in this scenario
+    Goods Receipt            MM / Inventory                        Dr Inventory / Cr GR/IR
+    Invoice Receipt          MM Invoice Verification + FI/AP       Dr GR/IR / Cr Supplier
+    Supplier Open Item       FI/AP	                               Supplier liability remains outstanding
+    Payment                  FI/AP	                               Dr Supplier / Cr Bank in simplified example
+    Clearing                 FI/AP	                               Supplier open item cleared
+    GR/IR Reconciliation     MM + FI	                           Review and resolve GR/IR differences
 
 
  19. Key Control Points 
@@ -477,7 +447,6 @@ Important controls in this process include:
 	• Required approvals
 	• Supplier payment information
 	 
-
 
  20. What I Learned 
 
