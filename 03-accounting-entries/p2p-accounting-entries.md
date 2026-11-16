@@ -59,13 +59,13 @@ Tax is excluded from the base scenario so that the core FI-MM integration can be
 
 # 3. Core P2P Accounting Entries
  
-            Process Stage                   Debit	             Credit	             Amount	            Business Impact
-            Purchase Requisition           No FI Posting         No FI Posting         ---	            Internal purchasing requirement
-            Purchase Order                 No FI Posting         No FI Posting	       ---	           	Purchasing commitment
-            Goods Receipt	               Inventory	         GR/IR	             ₹50,000	        Material received into stock
-            Invoice Receipt	               GR/IR	             Supplier	         ₹50,000	        Supplier liability created
-            Payment	                       Supplier	             Bank	             ₹50,000	        Supplier liability settled
-            Clearing	                    ---  	             ---        	      ---       	    Invoice and payment cleared
+     Process Stage                   Debit	              Credit	          Amount	   Business Impact
+     Purchase Requisition           No FI Posting         No FI Posting         ---        Internal purchasing requirement
+     Purchase Order                 No FI Posting         No FI Posting	        ---        Purchasing commitment
+     Goods Receipt	                Inventory	          GR/IR	             ₹50,000       Material received into stock
+     Invoice Receipt	            GR/IR	              Supplier	         ₹50,000	   Supplier liability created
+     Payment	                    Supplier	          Bank	             ₹50,000	   Supplier liability settled
+     Clearing	                    ---  	             ---        	      ---       Invoice and payment cleared
  
 
 # 4. Goods Receipt Accounting
