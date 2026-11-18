@@ -1,4 +1,4 @@
-# SAP S/4HANA FI-MM Procure-to-Pay (P2P) Business Scenario# 
+# SAP S/4HANA FI-MM Procure-to-Pay (P2P) Business Scenario
 
 
 # 1. Project Overview
@@ -12,7 +12,7 @@ This is an independent SAP S/4HANA FI-MM learning project designed to demonstrat
 The complete project uses synthetic business data created specifically for learning and portfolio purposes.
 
 
-# 2. Business Scenario# 
+# 2. Business Scenario
 Nova Manufacturing Pvt. Ltd. is a fictional manufacturing company that purchases raw materials from external suppliers for its production activities.
 
 The production department requires 100 units of a raw material.
@@ -28,7 +28,7 @@ The business needs to complete the purchasing process from identifying the requi
     • The supplier is paid according to the agreed payment terms.
     • Open supplier and GR/IR items are reviewed and reconciled
 
-# 3. Fictional Organization Structure# 
+# 3. Fictional Organization Structure
 Element	                           Synthetic Value
 Company                          	Nova Manufacturing Pvt. Ltd.
 Company Code	                    NM01
@@ -112,7 +112,7 @@ The project follows this business flow:
     GR/IR Reconciliation
 
 
-# 7. Process Steps# 
+# 7. Process Steps
 _Step 1: Identify Purchase Requirement_
 The production department determines that 100 units of RM-1001 are required for production.
 
@@ -171,7 +171,7 @@ The receiving team verifies:
 If everything is acceptable, the Goods Receipt is recorded.
 
 
-# 8. Goods Receipt Accounting Concept# 
+# 8. Goods Receipt Accounting Concept
 For this learning scenario, the simplified accounting concept for a valuated stock-material receipt is:
 
 Account	               Debit	   Credit
@@ -185,7 +185,7 @@ Cr GR/IR ₹50,000
 The exact accounting treatment in a real implementation depends on the configured business scenario and account determination.
 
 
-# 9. Supplier Invoice# 
+# 9. Supplier Invoice
 After supplying the material, the supplier submits an invoice.
 
 Example invoice:
@@ -200,7 +200,7 @@ PO Reference Synthetic PO reference
 The supplier invoice must be checked before normal processing continues.
 
 
-# 10. Three-Way Match# 
+# 10. Three-Way Match
 The project compares three business documents:
 
     1. Purchase Order
@@ -226,7 +226,7 @@ Based on the synthetic data used in this scenario, the Purchase Order quantity a
 
 In an actual SAP implementation, applicable tolerances and controls depend on system configuration.
 
-# 11. Invoice Posting Accounting Concept# 
+# 11. Invoice Posting Accounting Concept
 Using the simplified example before tax:
 
 Account	                Debit	Credit
@@ -269,7 +269,7 @@ Examples of situations that may require investigation include:
 The reconciliation section of this portfolio will document synthetic examples of these situations.
 
 
-# 14. Exception Scenarios# 
+# 14. Exception Scenarios
 The project will test both successful and unsuccessful transactions.
 
 # Scenario A  - Successful Three-Way Match
@@ -300,7 +300,7 @@ Expected investigation:
 
 Review the Purchase Order price and supplier invoice and resolve the difference according to the applicable business rules and configured tolerances.
 
-# Scenario D  - Invoice Received Before Goods Receipt	.
+# Scenario D  - Invoice Received Before Goods Receipt
 
 A Purchase Order exists and the supplier invoice has been received, but the expected Goods Receipt has not yet been recorded.
 
@@ -316,7 +316,7 @@ Expected investigation:
 Investigate the documents before proceeding to prevent duplicate processing or payment.
 
 
-# 15. Project Objectives# 
+# 15. Project Objectives
 By completing this project, I aim to demonstrate an understanding of:
 
     • SAP S/4HANA Procure-to-Pay
@@ -336,7 +336,7 @@ By completing this project, I aim to demonstrate an understanding of:
     • Functional testing
 
 
-# 16. Project Deliverables# 
+# 16. Project Deliverables
 The repository will gradually include:
 
     • Business scenario
@@ -353,7 +353,7 @@ The repository will gradually include:
     • Lessons learned
 
 
-# 17. Repository Structure# 
+# 17. Repository Structure
 
     sap-p2p-process-design/
     │
@@ -378,9 +378,9 @@ The repository will gradually include:
     └── 08-lessons-learned/
 
 
-# 18. Current Project Status# 
+# 18. Current Project Status
 
-    # Deliverable	                           Status # 
+     Deliverable	                           Status 
 	1. Business Scenario	                  Complete
 	2. P2P Glossary	                         Complete
 	3. Process Flow	                         Complete
@@ -389,13 +389,13 @@ The repository will gradually include:
 	6. Test Cases	                         Planned
 	7. Exception Analysis                    Planned
 	8. Defect Log	                         Planned
-	9. Lessons Learned                      Planned
+	9. Lessons Learned                       Planned
 
 
 The status will be updated as I complete each part of the project.
 
 
-# 19. Learning Disclaimer# 
+# 19. Learning Disclaimer
 This repository is an independent SAP S/4HANA learning portfolio.
 
 All companies, suppliers, materials, Purchase Orders, invoices, amounts, organizational structures and transaction data used in the project are fictional or synthetic.
