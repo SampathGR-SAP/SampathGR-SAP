@@ -472,20 +472,6 @@ Through this process-flow exercise, I developed a clearer understanding of:
 
 ---
 
-## 21. Next Project Steps
-
-The next sections of this portfolio cover:
-
-- Detailed FI-MM accounting entries
-- Three-Way Match scenarios
-- Synthetic transaction data
-- Functional test cases
-- Invoice exception analysis
-- GR/IR reconciliation examples
-- Lessons learned
-
----
-
 ## Project Disclaimer
 
 This is an independent SAP S/4HANA FI-MM learning and portfolio project.
