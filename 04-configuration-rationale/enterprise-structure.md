@@ -14,17 +14,17 @@ The purpose is to demonstrate why each organizational unit is required, how the 
 
 Nova Manufacturing purchases raw material for a single manufacturing location in India.
 
-| Element | Synthetic value | Purpose |
-|---|---|---|
-| Company | Nova Manufacturing Pvt. Ltd. | Legal enterprise used in the scenario |
-| Company Code | NM01 | Financial accounting and statutory reporting unit |
-| Plant | PL01 | Manufacturing and goods-receipt location |
-| Storage Location | SL01 | Raw-material stock location within PL01 |
-| Purchasing Organization | NP01 | Procurement responsibility |
-| Purchasing Group | PG01 | Buyer or buyer-team responsibility |
-| Supplier | V10001 - Alpha Industrial Supplies | External source of raw material |
-| Material | RM-1001 - Synthetic Production Material | Stock material purchased for production |
-| Currency | INR | Company-code and transaction currency for the base case |
+    | Element                 | Synthetic value                         | Purpose                                                 |
+    |-------------------------|-----------------------------------------|---------------------------------------------------------|
+    | Company                 | Nova Manufacturing Pvt. Ltd.            | Legal enterprise used in the scenario                   |
+    | Company Code            | NM01                                    | Financial accounting and statutory reporting unit       |
+    | Plant                   | PL01                                    | Manufacturing and goods-receipt location                |
+    | Storage Location        | SL01                                    | Raw-material stock location within PL01                 |
+    | Purchasing Organization | NP01                                    | Procurement responsibility                              |
+    | Purchasing Group        | PG01                                    | Buyer or buyer-team responsibility                      |
+    | Supplier                | V10001 - Alpha Industrial Supplies      | External source of raw material                         |
+    | Material                | RM-1001 - Synthetic Production Material | Stock material purchased for production                 |
+    | Currency                | INR                                     | Company-code and transaction currency for the base case |
 
 The base purchase is **100 units × ₹500 = ₹50,000**, with payment due in 30 days.
 
@@ -139,14 +139,14 @@ PG01 represents the buyer or buyer team responsible for the transaction.
 
 ## 5. Required Assignments
 
-| Assignment | Proposed relationship | Reason |
-|---|---|---|
-| Company Code to Company | NM01 → Nova Manufacturing | Connects accounting unit to enterprise context |
-| Plant to Company Code | PL01 → NM01 | Ensures plant transactions post to the correct accounting unit |
-| Storage Location to Plant | SL01 → PL01 | Places raw-material stock inside the receiving plant |
-| Purchasing Organization to Company Code | NP01 → NM01 | Defines company-code-specific procurement responsibility |
-| Purchasing Organization to Plant | NP01 → PL01 | Allows NP01 to procure for the plant |
-| Standard Purchasing Organization for Plant | NP01 for PL01 | Provides a clear default procurement relationship for the scenario |
+    | Assignment                                    | Proposed relationship       |                      Reason                                       |
+    |-----------------------------------------------|-----------------------------|-------------------------------------------------------------------|
+    | Company Code to Company                       | NM01 → Nova Manufacturing   | Connects accounting unit to enterprise context                    |
+    | Plant to Company Code                         | PL01 → NM01                 | Ensures plant transactions post to the correct accounting unit    |
+    | Storage Location to Plant                     | SL01 → PL01                 | Places raw-material stock inside the receiving plant              |
+    | Purchasing Organization to Company Code       | NP01 → NM01                 | Defines company-code-specific procurement responsibility          |
+    | Purchasing Organization to Plant              | NP01 → PL01                 | Allows NP01 to procure for the plant                              |
+    | Standard Purchasing Organization for Plant    | NP01 for PL01               | Provides a clear default procurement relationship for the scenario|
 
 The exact assignment model must follow the implementation's operating model. A centralized or cross-company purchasing organization would require a different design and additional controls.
 
@@ -176,13 +176,13 @@ The fictional material `RM-1001` requires organizational views appropriate to th
 
 ## 7. Transaction Ownership Across the Structure
 
-| P2P stage | Main organizational reference | Expected accounting impact in the base case |
-|---|---|---|
-| Purchase Requisition | Plant PL01, Purchasing Group PG01 | No FI posting |
-| Purchase Order | Purchasing Organization NP01, Plant PL01, Company Code NM01 | No FI posting |
-| Goods Receipt | Plant PL01, Storage Location SL01 | Dr Inventory / Cr GR/IR |
-| Invoice Verification | Company Code NM01, Purchasing Organization NP01 | Dr GR/IR / Cr Supplier |
-| Payment | Company Code NM01 | Dr Supplier / Cr Bank |
+    | P2P stage            | Main organizational reference                               | Expected accounting impact in the base case |
+    |----------------------|-------------------------------------------------------------|---------------------------------------------|
+    | Purchase Requisition | Plant PL01, Purchasing Group PG01                           | No FI posting                               |
+    | Purchase Order       | Purchasing Organization NP01, Plant PL01, Company Code NM01 | No FI posting                               |
+    | Goods Receipt        | Plant PL01, Storage Location SL01                           | Dr Inventory / Cr GR/IR                     |
+    | Invoice Verification | Company Code NM01, Purchasing Organization NP01             | Dr GR/IR / Cr Supplier                      |
+    | Payment              | Company Code NM01                                           | Dr Supplier / Cr Bank                       |
 
 ---
 
